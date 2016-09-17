@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 block="server {
     listen 80;
     server_name $1;
@@ -38,5 +40,6 @@ block="server {
 sudo mkdir -p "/etc/nginx/sites-available" "/etc/nginx/sites-enabled"
 sudo echo "$block" > "/etc/nginx/sites-available/$1"
 sudo ln -fs "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
+sudo apachectl stop
 sudo service nginx restart
 sudo service php-fpm restart

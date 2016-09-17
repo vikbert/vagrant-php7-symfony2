@@ -2,14 +2,15 @@ class Php7dev
   def Php7dev.configure(config, settings)
     # Configure The Box
     config.vm.box = "rasmus/php7dev"
-    config.vm.hostname = "php7dev"
+    config.vm.hostname = "php7symfony"
 
     # Configure A Private Network IP
     config.vm.network :private_network, ip: settings["ip"] ||= "192.168.7.7"
 
-    if settings['networking'][0]['public']
-      config.vm.network "public_network", type: "dhcp"
-    end
+    ## allow to choose the networking  c
+    # if settings['networking'][0]['public']
+    #   config.vm.network "public_network", type: "dhcp"
+    # end
 
     # Configure A Few VirtualBox Settings
     config.vm.provider "virtualbox" do |vb|
@@ -17,7 +18,7 @@ class Php7dev
       vb.customize ["modifyvm", :id, "--memory", settings["memory"] ||= "2048"]
       vb.customize ["modifyvm", :id, "--cpus", settings["cpus"] ||= "1"]
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       vb.customize ["modifyvm", :id, "--ostype", "Debian_64"]
       vb.customize ["modifyvm", :id, "--audio", "none", "--usb", "off", "--usbehci", "off"]
     end

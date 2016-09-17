@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo apt-get update && apt-get install -y software-properties-common
 sudo apt-get update

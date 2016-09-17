@@ -1,4 +1,13 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+export LC_ALL="en_US.UTF-8"
 
 cd /vagrant/scripts/
-./install_redis.sh
+
+# reset & clean up nginx
+sudo ./clear-sites.sh
+
+# install phpredis extension and redis server
+suodo ./install_redis.sh
+
+sudo apt-get install -y unzip nodejs npm wget curl
