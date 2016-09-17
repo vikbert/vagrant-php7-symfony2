@@ -24,7 +24,30 @@ $ vagrant ssh
 Add this to your hosts file on the hostmachine:
 
 ```
-192.168.7.7 php7symfony
+192.168.7.7 php7default
 ```
 
-To view the demo application, go to `http://php7symfony` in the browser.g
+To view the demo application, go to `http://php7default` in the browser.g
+
+![phpinfo page](assets/php7default.png?raw=true "phpinfo page")
+
+
+## Create the first Symfony standard App
+
+added Symfony app name `php7symfony` as server alias to `/etc/hosts` on the host machine
+
+```
+192.168.7.7  php7symfony php7symfony.local
+```
+
+create Symfony App named `php7symfony` in vagrant machine
+
+```
+$ vagrant ssh
+$ cd /vagrant/scripts
+$ sudo ./create-sites-symfony.sh php7symfony
+```
+
+Check the URL `http://php7symfony` in the browser
+ 
+![Symfony 3 standard project](assets/php7symfony.png?raw=true "symfony 3 standard project")
