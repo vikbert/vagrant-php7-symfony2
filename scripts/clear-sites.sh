@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 sudo rm -f /etc/nginx/sites-enabled/*
 sudo rm -f /etc/nginx/sites-available/*
 
@@ -32,6 +34,7 @@ http {
 
     #gzip  on;
     include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
 }
 "
 sudo echo "$nginxconf" > "/etc/nginx/nginx.conf"
