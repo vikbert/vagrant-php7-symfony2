@@ -15,10 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	if File.exists? aliasesPath then
 		config.vm.provision "file", source: aliasesPath, destination: "~/.bash_aliases"
 	end
-#	if File.exists? diffPath then
-#		config.vm.provision "file", source: diffPath, destination: "/tmp/php7dev.diff"
-#		config.vm.provision "shell", inline: '(cd /etc && sudo patch -p1 /etc/motd < /tmp/php7dev.diff) || true'
-#	end
+# 	if File.exists? diffPath then
+# 		config.vm.provision "file", source: diffPath, destination: "/tmp/php7dev.diff"
+# 		config.vm.provision "shell", inline: '(cd /etc && sudo patch -p1 /etc/motd < /tmp/php7dev.diff) || true'
+# 	end
 
 	Php7dev.configure(config, YAML::load(File.read(php7devYamlPath)))
 	config.vm.synced_folder ".", "/vagrant", id: "vagrant-root", type: "nfs"

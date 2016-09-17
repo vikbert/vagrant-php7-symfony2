@@ -27,4 +27,4 @@ Add this to your hosts file on the hostmachine:
 192.168.7.7 php7symfony
 ```
 
-To view the demo application, go to `http://php7symfony` in the browser.
+To view the demo application, go to `http://php7symfony` in the browser.g

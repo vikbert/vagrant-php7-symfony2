@@ -1,5 +1,5 @@
 ---
-ip: "192.168.7.7"
+ip: "192.168.7.7"  ## reserved private IP ranges 192.168.0.0 - 192.168.255.255
 memory: 2048
 cpus: 2
 
@@ -19,8 +19,8 @@ folders:
       to: /var/www/sites
 
 sites:
-#    - hostname: example-site
-#      to: /home/vagrant/www/example-site
+    - hostname: example-site
+      to: /home/vagrant/www/example-site
 
 databases:
     - example_database
