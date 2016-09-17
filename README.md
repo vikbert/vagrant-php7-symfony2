@@ -21,8 +21,10 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-Add this to your hosts file:
+Add this to your hosts file on the hostmachine:
 
 ```
-192.168.7.7 vagrant-php7-symfony2
+192.168.7.7 php7symfony
 ```
+
+To view the demo application, go to `http://php7symfony` in the browser.
